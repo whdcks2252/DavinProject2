@@ -1,0 +1,92 @@
+﻿<Window x:Class="CalibrationChecker.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:local="clr-namespace:CalibrationChecker"
+        mc:Ignorable="d"
+        Title="Main" Height="500" Width="1000">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="30,20,0,0"/>
+        </Style>
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Margin" Value="30,0,0,0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="460"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <!--로우 0 컬럼 0!-->
+        
+        <Grid Grid.Column="0">
+            <Button  Command="{Binding FindCalName}" Margin="402,32,25,82" RenderTransformOrigin="0.574,0.294" Content="Find" FontWeight="Bold"/>
+            <TextBox Text="{Binding FileNameTxt}" Margin="54,24,63,75" FontSize="20"></TextBox>
+            <TextBlock Margin="54,80,318,22">
+                <StackPanel>
+                    <RadioButton  FontSize="15" Margin="10,5,0,3" Content="1 Port" FontWeight="Bold"/>
+                    <RadioButton  FontSize="15" Margin="10,5,0,0" Content="2 Port" FontWeight="Bold"/>
+                </StackPanel>
+            </TextBlock>
+            <Button Margin="147,80,25,22" Style="{StaticResource ButtonStyle}">
+                <TextBlock>
+                 Load Cal File Button
+                <LineBreak/>
+                (Show Dialog Window)
+                </TextBlock>
+            </Button>
+        </Grid>
+        <!--로우0 컬럼 2!-->
+        <Grid Grid.Column="2">
+            <Button Command="{Binding LoadFile}" Margin="277,24,25,75" Style="{StaticResource ButtonStyle}">Load</Button>
+            <Button Margin="277,80,25,22" Style="{StaticResource ButtonStyle}">Cal/Export</Button>
+        </Grid>
+        <!--가운데 체크박스-->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <StackPanel>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Text="S11" Margin="30,20,0,0" />
+                <CheckBox  Style="{StaticResource CheckBoxStyle}"/>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Text="S12" Margin="30,20,0,0"/>
+                <CheckBox  Style="{StaticResource CheckBoxStyle}"/>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Text="S13" Margin="30,20,0,0"/>
+                <CheckBox  Style="{StaticResource CheckBoxStyle}"/>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Text="S14" Margin="30,20,0,0"/>
+                <CheckBox  Style="{StaticResource CheckBoxStyle}"/>
+            </StackPanel>
+        </Grid>
+        <!-- 오리지널 차트-->
+        <Grid Grid.Row="1">
+            <oxy:PlotView Margin="10,10,10,10" />
+        </Grid>
+        <!--Amplitude !-->
+        <Grid Grid.Row="1" Grid.Column="2">
+            <oxy:PlotView Margin="10,10,10,10" />
+        </Grid>
+        <!-- 페이징-->
+        <Grid Grid.Row="2">
+            <TextBlock TextAlignment="Center" Margin="56,21,329,24">페이지 검색</TextBlock>
+            <TextBox Margin="136,18,254,24"></TextBox>
+            <TextBlock Background="Black" Margin="274,15,136,21"></TextBlock>
+            <TextBlock TextAlignment="Center" Margin="324,20,105,26" RenderTransformOrigin="0.446,0.188">/</TextBlock>
+            <TextBlock Background="Black" Margin="352,15,62,21"></TextBlock>
+        </Grid>
+
+
+    </Grid>
+</Window>
