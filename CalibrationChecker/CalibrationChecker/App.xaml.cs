@@ -1,4 +1,7 @@
-﻿using CalibrationChecker.Repository;
+﻿using CalibrationChecker.Navigation;
+using CalibrationChecker.Repository;
+using CalibrationChecker.Store;
+using CalibrationChecker.View;
 using CalibrationChecker.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -34,16 +37,22 @@ namespace CalibrationChecker
             //Repository
             services.AddSingleton<S_ParameterRepository>();
 
+            //Store
+            services.AddSingleton<MainNavigationStore>();
+            //Nevigation
+            services.AddSingleton<NavigationService>();
 
             //ViewModels
+            services.AddSingleton<MainWindowViewModel>();
             services.AddSingleton<MainViewModel>();
+            services.AddSingleton<LoadCalFileViewModel>();
 
             //Views
             services.AddSingleton(s => new Main()
             {
-                DataContext = s.GetRequiredService<MainViewModel>()
+                DataContext = s.GetRequiredService<MainWindowViewModel>()
             });
-
+           
             return services.BuildServiceProvider();
             
         }

@@ -24,6 +24,7 @@ namespace CalibrationChecker.Models
         //22
         public Double S22Real { get; set; }
         public Double S22Imag { get; set; }
+        
 
     }
 }

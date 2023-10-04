@@ -107,18 +107,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="Navigation\NaviType.cs" />
+    <Compile Include="Store\MainNavigationStore.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CheckBoxCommandP1.cs" />
+    <Compile Include="Commands\CheckBoxCommandP2.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\FindCalNameCommand.cs" />
+    <Compile Include="Commands\LoadCalFileBtCommand.cs" />
     <Compile Include="Commands\LoadFileCommand.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Enum\FileEnum.cs" />
     <Compile Include="Models\S_ParameterData.cs" />
     <Compile Include="Repository\S_ParameterRepository.cs" />
+    <Compile Include="Store\FileCount.cs" />
     <Compile Include="Store\FileRoot.cs" />
     <Compile Include="Repository\DTO\S_ParamDTO.cs" />
+    <Compile Include="Util\DistributionTimeStamp.cs" />
+    <Compile Include="Util\PlotModelImp.cs" />
+    <Compile Include="ViewModel\LoadCalFileViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\LoadCalFile.xaml.cs">
+      <DependentUpon>LoadCalFile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
@@ -149,13 +167,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\LoadCalFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
