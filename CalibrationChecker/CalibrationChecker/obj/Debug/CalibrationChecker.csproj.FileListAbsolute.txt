@@ -120,7 +120,6 @@ C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationCheck
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\bin\Debug\VNA_Calibration.pdb
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\View\Main.baml
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\CalibrationChecker.g.resources
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\CalibrationChecker.Properties.Resources.resources
@@ -132,3 +131,5 @@ C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationCheck
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\View\MainControl.g.cs
 C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\View\MainControl.baml
+C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\bin\Debug\VNA_Calibration.dll
+C:\Users\seque\OneDrive\바탕 화면\CalibrationCheckerProject\CalibrationChecker\CalibrationChecker\obj\Debug\CalibrationChecker_Content.g.cs

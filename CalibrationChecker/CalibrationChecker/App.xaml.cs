@@ -11,7 +11,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using VNA_Calibration;
 
 namespace CalibrationChecker
 {
@@ -36,7 +35,7 @@ namespace CalibrationChecker
             var services = new ServiceCollection();
             //Repository
             services.AddSingleton<S_ParameterRepository>();
-
+            services.AddSingleton<CalFileRepository>();
             //Store
             services.AddSingleton<MainNavigationStore>();
             //Nevigation

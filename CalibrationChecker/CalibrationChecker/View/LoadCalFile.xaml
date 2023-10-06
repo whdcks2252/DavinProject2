@@ -6,8 +6,63 @@
              xmlns:local="clr-namespace:CalibrationChecker.View"
              mc:Ignorable="d" 
              Height="750" Width="1000">
+
+    <UserControl.Resources>
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="550"/>
+            <ColumnDefinition Width="460"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="Black" BorderThickness="0,0,1,1">
+            <Grid>
+                <TextBlock Style="{StaticResource TextBlockStyle}"  Margin="231,10,194,371">P1</TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Margin="8,102,421,264">Open</TextBlock>
+                <TextBox Text="{Binding Open_0Txt,UpdateSourceTrigger=PropertyChanged}" Margin="90,98,120,290"></TextBox>
+                <Button Command="{Binding LoadCalFileBt}" CommandParameter="Open_0" Margin="439,102,12,290">Load File</Button>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Margin="10,198,419,168">Short</TextBlock>
+                <TextBox Text="{Binding Short_0Txt,UpdateSourceTrigger=PropertyChanged}" Margin="90,188,120,200"></TextBox>
+                <Button Command="{Binding LoadCalFileBt}" CommandParameter="Short_0" Margin="439,190,12,202">Load File</Button>
+                <TextBlock Style="{StaticResource TextBlockStyle}" Margin="14,296,415,70">Load</TextBlock>
+                <TextBox Text="{Binding Load_0Txt,UpdateSourceTrigger=PropertyChanged}" Margin="90,280,120,106"></TextBox>
+                <Button  Command="{Binding LoadCalFileBt}" CommandParameter="Load_0" Margin="439,282,12,110">Load File</Button>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0,0,0,1">
+            <Grid>
+                <TextBlock Style="{StaticResource TextBlockStyle}"  Margin="231,10,194,371">P2</TextBlock>
+                <TextBox Text="{Binding Open_1Txt,UpdateSourceTrigger=PropertyChanged}" Margin="44,98,168,290"></TextBox>
+                <Button Command="{Binding LoadCalFileBt}" CommandParameter="Open_1" Margin="317,102,44,290">Load File</Button>
+                <TextBox Text="{Binding Short_1Txt,UpdateSourceTrigger=PropertyChanged}" Margin="44,188,166,200"></TextBox>
+                <Button Command="{Binding LoadCalFileBt}" CommandParameter="Short_1"  Margin="317,190,44,202">Load File</Button>
+                <TextBox  Text="{Binding Load_1Txt,UpdateSourceTrigger=PropertyChanged}" Margin="44,280,166,106"></TextBox>
+                <Button Command="{Binding LoadCalFileBt}" CommandParameter="Load_1" Margin="317,282,44,110">Load File</Button>
+            </Grid>
+        </Border>
+
+        <Grid Grid.ColumnSpan="2" Grid.Row="1">
+            <TextBlock Style="{StaticResource TextBlockStyle}" Margin="14,40,880,194">Thru</TextBlock>
+            <TextBox Text="{Binding ThruTxt,UpdateSourceTrigger=PropertyChanged}"  Margin="154,31,197,212"></TextBox>
+            <Button Command="{Binding LoadCalFileBt}" CommandParameter="Thru" Margin="848,36,58,216">Load File</Button>
+            <TextBlock Style="{StaticResource TextBlockStyle}" Margin="14,114,829,117">Load Both</TextBlock>
+            <TextBox Text="{Binding LoadBoth,UpdateSourceTrigger=PropertyChanged}" Margin="154,104,197,142"></TextBox>
+            <Button Command="{Binding LoadCalFileBt}" CommandParameter="LoadBoth" Margin="848,107,58,142">Load File</Button>
+            <Button Command="{Binding ClearAllBt}"  Margin="570,189,274,60" Content="Clear All Button"/>
+            <Button Command="{Binding LoadAutoBt}" Margin="786,189,58,60" Content="Load Auto Button"/>
+            <Button Command="{Binding LoadBt}" Margin="22,189,886,60" Content="Load"></Button>
+        </Grid>
         
     </Grid>
 </UserControl>

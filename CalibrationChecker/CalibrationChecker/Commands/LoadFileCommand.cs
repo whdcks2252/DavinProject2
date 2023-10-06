@@ -34,6 +34,23 @@ namespace CalibrationChecker.Commands
             string fileName=mainViewModel.FileNameTxt;
             try
             {
+                if (fileName.Contains(FileEnum.P1.ToString()))//p1파일 일시
+                {
+
+                    if (FileCount.FileP1 == true)
+                    {
+                        s_ParameterRepository.ClearP1();
+                    }
+                }
+
+                if (fileName.Contains(FileEnum.P2.ToString()))//p2 파일 일시
+                {
+                    if (FileCount.FileP2 == true)
+                    {
+                        s_ParameterRepository.ClearP2();
+                    }
+                }
+
                 using (var reader = new StreamReader(filePath))
                 using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
                 {
@@ -46,48 +63,42 @@ namespace CalibrationChecker.Commands
                     }
 
                 }
-                if (fileName.Contains(FileEnum.P1.ToString()))//p1파일 일시
-                {
+                //if (fileName.Contains(FileEnum.P1.ToString()))//p1파일 일시
+                //{
+                //    List<S_ParamDTO> s_ParamDTOs = s_ParameterRepository.GetDatasP1();
 
-                    if (FileCount.FileP1 == true)
-                    {
-                        throw new Exception();
-                    }
-                    List<S_ParamDTO> s_ParamDTOs = s_ParameterRepository.GetDatasP1();
+                //    var groupedData = s_ParamDTOs.GroupBy(data => data.timestamp);
+                //    foreach (var group in groupedData)
+                //    {
+                //        List<S_ParamDTO> dto = group.ToList();
+                //        mainViewModel.PlotModelmp.ChageCharMethod(ref dto, ref fileName);
 
-                    var groupedData = s_ParamDTOs.GroupBy(data => data.timestamp);
-                    foreach (var group in groupedData)
-                    {
-                        List<S_ParamDTO> dto = group.ToList();
-                        mainViewModel.PlotModelmp.ChageCharMethod(ref dto, ref fileName);
+                //    }
 
-                    }
-
-                    FileCount.FileP1 = true;
-                    mainViewModel.IsCheckedS11 = true;
-                    mainViewModel.IsCheckedS21 = true;
+                //    FileCount.FileP1 = true;
+                //    mainViewModel.IsCheckedS11 = true;
+                //    mainViewModel.IsCheckedS21 = true;
 
 
-                }
-                else if (fileName.Contains(FileEnum.P2.ToString()))//p2 파일 일시
-                {
-                    if (FileCount.FileP2 == true)
-                    {
-                        throw new Exception();
-                    }
-                    List<S_ParamDTO> s_ParamDTOs = s_ParameterRepository.GetDatasP2();
+                //}
+                //else if (fileName.Contains(FileEnum.P2.ToString()))//p2 파일 일시
+                //{
+                    
+                //    List<S_ParamDTO> s_ParamDTOs = s_ParameterRepository.GetDatasP2();
 
-                    var groupedData = s_ParamDTOs.GroupBy(data => data.timestamp);
-                    foreach (var group in groupedData)
-                    {
-                        List<S_ParamDTO> dto = group.ToList();
-                        mainViewModel.PlotModelmp.ChageCharMethod(ref dto, ref fileName);
+                //    var groupedData = s_ParamDTOs.GroupBy(data => data.timestamp);
+                //    foreach (var group in groupedData)
+                //    {
+                //        List<S_ParamDTO> dto = group.ToList();
+                //        mainViewModel.PlotModelmp.ChageCharMethod(ref dto, ref fileName);
 
-                    }
-                    FileCount.FileP2 = true;
-                    mainViewModel.IsCheckedS12 = true;
-                    mainViewModel.IsCheckedS22 = true;
-                }
+                //    }
+                //    FileCount.FileP2 = true;
+                //    mainViewModel.IsCheckedS12 = true;
+                //    mainViewModel.IsCheckedS22 = true;
+                //}
+
+                Console.WriteLine(s_ParameterRepository.GetDatasP1().Count);
 
             }
             catch (Exception ex) { MessageBox.Show("파일열기 실패"); }

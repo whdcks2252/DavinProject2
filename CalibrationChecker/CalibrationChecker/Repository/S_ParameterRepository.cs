@@ -25,6 +25,10 @@ namespace CalibrationChecker.Repository
 
         }
 
+        public void ClearP1() { S_PArameterDatasP1.Clear(); }
+        public void ClearP2() { S_PArameterDatasP2.Clear(); }
+
+
         public List<S_ParamDTO> GetDatasP1()
         {
             List<S_ParamDTO> s_ParamDTOs = new List<S_ParamDTO>();

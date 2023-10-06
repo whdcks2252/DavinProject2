@@ -58,6 +58,7 @@ namespace CalibrationChecker.Util
                     Color = OxyColors.Red,
 
                 };
+
                 foreach (var data in datas)
                 {
                     lineSeries11.Points.Add(new DataPoint(data.freq, Math.Sqrt(data.S11Real * data.S11Real + data.S11Imag * data.S11Imag)));

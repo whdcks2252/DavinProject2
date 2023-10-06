@@ -45,6 +45,8 @@ namespace CalibrationChecker.ViewModel
             CheckBoxP2 = new CheckBoxCommandP2(this, s_ParameterRepository);
             LoadCalFileBt = new RelayCommand<object>(LoadCalFileView);
             PlotModelmp = PlotModelImp.GetPlotModelImp();
+            PlotModelmp2 = PlotModelImp2.GetPlotModelImp();
+            CalExportBT = new LoadCalExportBtCommand(this);
         }
 
 
@@ -54,6 +56,7 @@ namespace CalibrationChecker.ViewModel
         public ICommand CheckBoxP2 { get; set; }
         public ICommand LoadCalFileBt { get; set; }
 
+        public ICommand CalExportBT { get; set; }
 
         public UserControl LoadCalFile {
             get { return loadCalFile; }
@@ -70,6 +73,7 @@ namespace CalibrationChecker.ViewModel
 
         ////oxyPlot
         public PlotModelImp PlotModelmp { get; set; }
+        public PlotModelImp2 PlotModelmp2 { get; set; }
 
         //CheckBox
         public bool IsCheckedS11 {
